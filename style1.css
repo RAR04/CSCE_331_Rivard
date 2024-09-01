@@ -19,7 +19,7 @@ h1, h2, p {
 .navigation{
     display: flex;
 }
-nav.link, nav.visited{
+a:link, a:visited{
     background-color: azure;
     color: #0000ff;
     padding: 14px 25px;
@@ -27,7 +27,7 @@ nav.link, nav.visited{
     text-decoration: none;
     display: inline-block;
 }
-nav.hover, nav.active{
+a:hover, a:active{
     background-color: #0000ff;
     color: azure;
 }
