@@ -7,6 +7,27 @@ h1, h2, p {
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
-p{
-    display: table;
+.main {
+    display: flex;
+}
+.img1 {
+    display: initial;
+}
+.img2 {
+    display: none;
+}
+.navigation{
+    display: flex;
+}
+nav.link, nav.visited{
+    background-color: azure;
+    color: #0000ff;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+nav.hover, nav.active{
+    background-color: #0000ff;
+    color: azure;
 }
