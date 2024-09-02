@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News</title>
+    <style>
+        body {
+            background-color: maroon;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .cascading-text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            transform: rotate(90deg);
+            transform-origin: right bottom;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cascading-text span {
+            display: block;
+            animation: cascade 10s linear infinite;
+        }
+
+        @keyframes cascade {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        .news {
+            width: 60%;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .news h1 {
+            text-align: center;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+
+        .news article {
+            margin-bottom: 20px;
+        }
+
+        .news h2 {
+            margin-top: 0;
+        }
+
+        .news p {
+            line-height: 1.6;
+        }
+
+        .prompt-box {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .prompt-box p {
+            margin: 0;
+        }
+
+        .home-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .home-link:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-link">Home Page</a>
+
+    <div class="cascading-text">
+        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
+        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
+        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
+        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
+        <!-- Add more spans as needed -->
+    </div>
+
+    <div class="news">
+        <h1>Cybersecurity News</h1>
+        <article>
+            <h2>Major Vulnerability Discovered in Popular Software</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+        </article>
+        <article>
+            <h2>New Cyberattack Technique Targets Financial Institutions</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+        </article>
+        <article>
+            <h2>Security Update Released for Critical Software</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+        </article>
+    </div>
+
+    <div class="prompt-box">
+        <p>Generate an HTML webpage with a maroon background, indecipherable text cascading down the side, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page".</p>
+    </div>
+</body>
+</html>
