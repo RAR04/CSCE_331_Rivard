@@ -8,7 +8,7 @@
         body {
             background-color: maroon;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
             position: relative;
@@ -54,6 +54,7 @@
             text-align: center;
             border-bottom: 2px solid white;
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .news article {
@@ -75,6 +76,10 @@
             background-color: rgba(0, 0, 0, 0.7);
             border: 1px solid white;
             border-radius: 5px;
+            position: fixed;
+            bottom: 20px;
+            left: 10%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .prompt-box p {
@@ -103,30 +108,35 @@
 
     <div class="cascading-text">
         <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
-        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
-        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
-        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
+        <span>ASDFGHJKLZXCVBNMQWERTYUIOP</span>
+        <span>ZXCVBNMASDFGHJKLQWERTYUIOP</span>
+        <span>LKJHGFDSAPOIUYTREWQMNZXCV</span>
+        <span>REWQASDFGHJKLMNBVCXZPOIUYT</span>
         <!-- Add more spans as needed -->
     </div>
 
     <div class="news">
         <h1>Cybersecurity News</h1>
         <article>
-            <h2>Major Vulnerability Discovered in Popular Software</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+            <h2>New Ransomware Strain Targets Healthcare Sector</h2>
+            <p>In recent weeks, a new strain of ransomware has emerged, specifically targeting hospitals and healthcare providers. This ransomware encrypts critical medical records and demands a hefty ransom for their release. The attack has caused significant disruptions in patient care and has prompted widespread concern among cybersecurity experts. Authorities are urging all healthcare organizations to update their security protocols and enhance their defenses against such threats.</p>
         </article>
         <article>
-            <h2>New Cyberattack Technique Targets Financial Institutions</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+            <h2>Zero-Day Exploit Found in Popular Web Browser</h2>
+            <p>A zero-day vulnerability has been discovered in a widely-used web browser, potentially exposing millions of users to malicious attacks. The flaw allows attackers to execute arbitrary code on the victim's machine, which could lead to data breaches and system compromises. The browser’s developers have released an emergency update to patch the vulnerability, and users are advised to update their software immediately to mitigate the risk.</p>
         </article>
         <article>
-            <h2>Security Update Released for Critical Software</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+            <h2>Cybersecurity Breach at Major Financial Institution</h2>
+            <p>One of the largest financial institutions has reported a significant cybersecurity breach affecting customer accounts. The breach, which appears to have been caused by a phishing attack, has led to unauthorized access to sensitive financial information. The institution is working closely with law enforcement and cybersecurity experts to contain the breach and prevent further damage. Affected customers are being notified and advised to monitor their accounts for any suspicious activity.</p>
+        </article>
+        <article>
+            <h2>Government Announces New Cybersecurity Regulations</h2>
+            <p>The government has announced new regulations aimed at improving cybersecurity across critical infrastructure sectors. These regulations include stricter requirements for reporting cyber incidents, enhanced security measures for data protection, and increased penalties for non-compliance. The new rules are designed to bolster the nation’s defenses against cyberattacks and ensure that organizations take appropriate steps to safeguard their systems and data.</p>
         </article>
     </div>
 
     <div class="prompt-box">
-        <p>Generate an HTML webpage with a maroon background, indecipherable text cascading down the side, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page".</p>
+        <p>Generate an HTML webpage with a maroon background, indecipherable text cascading down the side, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family.</p>
     </div>
 </body>
 </html>
