@@ -30,14 +30,20 @@
 
         .cascading-text span {
             display: block;
-            animation: cascade 10s linear infinite;
+            animation: cascade 5s linear infinite;
         }
 
         @keyframes cascade {
-            from {
+            0% {
+                opacity: 1;
                 transform: translateY(0);
             }
-            to {
+            50% {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+            100% {
+                opacity: 1;
                 transform: translateY(-100%);
             }
         }
@@ -71,7 +77,6 @@
 
         .prompt-box {
             width: 80%;
-            margin: 20px auto;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border: 1px solid white;
@@ -107,36 +112,36 @@
     <a href="index.html" class="home-link">Home Page</a>
 
     <div class="cascading-text">
-        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
-        <span>ASDFGHJKLZXCVBNMQWERTYUIOP</span>
         <span>ZXCVBNMASDFGHJKLQWERTYUIOP</span>
-        <span>LKJHGFDSAPOIUYTREWQMNZXCV</span>
-        <span>REWQASDFGHJKLMNBVCXZPOIUYT</span>
+        <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
+        <span>LKJHGFDSAQWERTYUIOPZXCVBNM</span>
+        <span>POIUYTREWQLKJHGFDSAMNBVCXZ</span>
+        <span>MNBVCXZLKJHGFDSAQPWOEIURTY</span>
         <!-- Add more spans as needed -->
     </div>
 
     <div class="news">
         <h1>Cybersecurity News</h1>
         <article>
-            <h2>New Ransomware Strain Targets Healthcare Sector</h2>
-            <p>In recent weeks, a new strain of ransomware has emerged, specifically targeting hospitals and healthcare providers. This ransomware encrypts critical medical records and demands a hefty ransom for their release. The attack has caused significant disruptions in patient care and has prompted widespread concern among cybersecurity experts. Authorities are urging all healthcare organizations to update their security protocols and enhance their defenses against such threats.</p>
+            <h2>Major Vulnerability Discovered in Banking Software</h2>
+            <p>Security researchers have identified a critical vulnerability in widely-used banking software that allows unauthorized access to sensitive financial data. The flaw, which affects several major banking platforms, could potentially expose user account information and transaction history. Banks are urged to implement patches released by the software vendor to mitigate risks.</p>
         </article>
         <article>
-            <h2>Zero-Day Exploit Found in Popular Web Browser</h2>
-            <p>A zero-day vulnerability has been discovered in a widely-used web browser, potentially exposing millions of users to malicious attacks. The flaw allows attackers to execute arbitrary code on the victim's machine, which could lead to data breaches and system compromises. The browser’s developers have released an emergency update to patch the vulnerability, and users are advised to update their software immediately to mitigate the risk.</p>
+            <h2>Advanced Persistent Threats on the Rise</h2>
+            <p>Advanced Persistent Threat (APT) groups are increasingly targeting government and corporate networks with sophisticated attacks. These threats are characterized by long-term, stealthy operations aimed at stealing sensitive information. Organizations are advised to enhance their detection capabilities and adopt comprehensive security measures to combat these sophisticated threats.</p>
         </article>
         <article>
-            <h2>Cybersecurity Breach at Major Financial Institution</h2>
-            <p>One of the largest financial institutions has reported a significant cybersecurity breach affecting customer accounts. The breach, which appears to have been caused by a phishing attack, has led to unauthorized access to sensitive financial information. The institution is working closely with law enforcement and cybersecurity experts to contain the breach and prevent further damage. Affected customers are being notified and advised to monitor their accounts for any suspicious activity.</p>
+            <h2>Data Breach Affects Millions of Social Media Users</h2>
+            <p>A recent data breach has compromised the personal information of millions of users on a popular social media platform. The breach, which involved the exposure of usernames, email addresses, and hashed passwords, highlights the importance of using strong, unique passwords and enabling two-factor authentication to secure online accounts.</p>
         </article>
         <article>
-            <h2>Government Announces New Cybersecurity Regulations</h2>
-            <p>The government has announced new regulations aimed at improving cybersecurity across critical infrastructure sectors. These regulations include stricter requirements for reporting cyber incidents, enhanced security measures for data protection, and increased penalties for non-compliance. The new rules are designed to bolster the nation’s defenses against cyberattacks and ensure that organizations take appropriate steps to safeguard their systems and data.</p>
+            <h2>New Cybersecurity Framework for Critical Infrastructure</h2>
+            <p>The government has released a new cybersecurity framework designed to protect critical infrastructure from cyberattacks. This framework provides guidelines for risk management, incident response, and resilience planning. Organizations operating within critical sectors are encouraged to adopt these guidelines to improve their cybersecurity posture and safeguard against potential threats.</p>
         </article>
     </div>
 
     <div class="prompt-box">
-        <p>Generate an HTML webpage with a maroon background, indecipherable text cascading down the side, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family.</p>
+        <p>Generate an HTML webpage with a maroon background, indecipherable text cascading down the side and disappears repeatedly, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family. Make sure the prompt box is fixed and doesn't follow the user view.</p>
     </div>
 </body>
 </html>

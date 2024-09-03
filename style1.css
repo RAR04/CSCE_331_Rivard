@@ -25,14 +25,14 @@ td{
     display: flex;
 }
 a:link, a:visited{
-    background-color: azure;
-    color: #0000ff;
+    background-color: green;
+    color: red;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
 }
 a:hover, a:active{
-    background-color: #0000ff;
-    color: azure;
+    background-color: red;
+    color: green;
 }
