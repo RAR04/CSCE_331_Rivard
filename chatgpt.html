@@ -12,46 +12,39 @@
             margin: 0;
             padding: 0;
             position: relative;
+            overflow-x: hidden;
         }
 
-        .cascading-text {
+        .background-text {
             position: absolute;
             top: 0;
-            right: 0;
-            width: 200px;
+            left: 0;
+            width: 100%;
             height: 100%;
-            overflow: hidden;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 48px;
+            line-height: 1.2;
             white-space: nowrap;
-            transform: rotate(90deg);
-            transform-origin: right bottom;
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.5);
+            transform: rotate(-30deg);
+            transform-origin: left top;
+            z-index: -1;
         }
 
-        .cascading-text span {
+        .background-text span {
             display: block;
-            animation: cascade 5s linear infinite;
+            animation: fade 20s linear infinite;
         }
 
-        @keyframes cascade {
-            0% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            50% {
-                opacity: 0;
-                transform: translateY(-50%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(-100%);
-            }
+        @keyframes fade {
+            0% { opacity: 0; }
+            50% { opacity: 0.1; }
+            100% { opacity: 0; }
         }
 
         .news {
-            width: 60%;
+            width: 70%;
             margin: 20px auto;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 5px;
         }
@@ -76,14 +69,14 @@
         }
 
         .prompt-box {
-            width: 80%;
+            width: 250px;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border: 1px solid white;
             border-radius: 5px;
             position: fixed;
-            bottom: 20px;
-            left: 10%;
+            top: 20px;
+            right: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -111,37 +104,36 @@
 <body>
     <a href="index.html" class="home-link">Home Page</a>
 
-    <div class="cascading-text">
-        <span>ZXCVBNMASDFGHJKLQWERTYUIOP</span>
+    <div class="background-text">
         <span>QWERTYUIOPASDFGHJKLZXCVBNM</span>
-        <span>LKJHGFDSAQWERTYUIOPZXCVBNM</span>
-        <span>POIUYTREWQLKJHGFDSAMNBVCXZ</span>
-        <span>MNBVCXZLKJHGFDSAQPWOEIURTY</span>
-        <!-- Add more spans as needed -->
+        <span>ASDFGHJKLZXCVBNMQWERTYUIOP</span>
+        <span>ZXCVBNMASDFGHJKLQWERTYUIOP</span>
+        <span>LKJHGFDSAPOIUYTREWQMNZXCV</span>
+        <span>REWQASDFGHJKLMNBVCXZPOIUYT</span>
     </div>
 
     <div class="news">
         <h1>Cybersecurity News</h1>
         <article>
-            <h2>Major Vulnerability Discovered in Banking Software</h2>
-            <p>Security researchers have identified a critical vulnerability in widely-used banking software that allows unauthorized access to sensitive financial data. The flaw, which affects several major banking platforms, could potentially expose user account information and transaction history. Banks are urged to implement patches released by the software vendor to mitigate risks.</p>
+            <h2>Zero-Day Vulnerability Exploited in Popular Operating System</h2>
+            <p>A critical zero-day vulnerability has been exploited in a widely-used operating system, affecting millions of users globally. The flaw allows attackers to gain unauthorized access to system files and execute arbitrary code with elevated privileges. Security patches have been issued, and users are urged to update their systems immediately to protect against potential exploits.</p>
         </article>
         <article>
-            <h2>Advanced Persistent Threats on the Rise</h2>
-            <p>Advanced Persistent Threat (APT) groups are increasingly targeting government and corporate networks with sophisticated attacks. These threats are characterized by long-term, stealthy operations aimed at stealing sensitive information. Organizations are advised to enhance their detection capabilities and adopt comprehensive security measures to combat these sophisticated threats.</p>
+            <h2>Phishing Campaign Targets High-Profile Executives</h2>
+            <p>Recent reports indicate a sophisticated phishing campaign targeting high-profile executives across various industries. The attackers are using highly personalized emails to deceive victims into revealing sensitive information. Companies are advised to conduct security awareness training and implement advanced email filtering solutions to mitigate these threats.</p>
         </article>
         <article>
-            <h2>Data Breach Affects Millions of Social Media Users</h2>
-            <p>A recent data breach has compromised the personal information of millions of users on a popular social media platform. The breach, which involved the exposure of usernames, email addresses, and hashed passwords, highlights the importance of using strong, unique passwords and enabling two-factor authentication to secure online accounts.</p>
+            <h2>Cybersecurity Breach in E-Commerce Giant</h2>
+            <p>An e-commerce giant has reported a significant cybersecurity breach affecting its customer database. The breach has led to the exposure of personal and payment information of millions of customers. The company is working to address the breach and is offering free credit monitoring services to affected individuals. Customers are encouraged to change their passwords and monitor their accounts for unusual activity.</p>
         </article>
         <article>
-            <h2>New Cybersecurity Framework for Critical Infrastructure</h2>
-            <p>The government has released a new cybersecurity framework designed to protect critical infrastructure from cyberattacks. This framework provides guidelines for risk management, incident response, and resilience planning. Organizations operating within critical sectors are encouraged to adopt these guidelines to improve their cybersecurity posture and safeguard against potential threats.</p>
+            <h2>New Regulations for Data Privacy Announced</h2>
+            <p>The government has introduced new regulations aimed at enhancing data privacy and security. These regulations mandate stricter data protection measures for organizations handling personal information. Companies must now implement robust security practices and provide clear disclosures about data collection and usage to comply with the new rules.</p>
         </article>
     </div>
 
     <div class="prompt-box">
-        <p>Generate an HTML webpage with a maroon background, indecipherable text cascading down the side and disappears repeatedly, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family. Make sure the prompt box is fixed and doesn't follow the user view.</p>
+        <p>Generate an HTML webpage with a maroon background, indecipherable text in the background, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family. Make sure the prompt box is static and off to the right.</p>
     </div>
 </body>
 </html>
