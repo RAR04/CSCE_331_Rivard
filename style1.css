@@ -1,5 +1,5 @@
 body {
-    background-color:#460000
+    background-color:#500000
 
 }
 h1, h2, p, th {
@@ -27,6 +27,9 @@ h1, h2, p, th {
     grid-row: 1;
     place-self: center;
 }
+.box3{
+    
+}
 .text1{
     grid-column: 1;
     grid-row: 2;
@@ -40,7 +43,7 @@ h1, h2, p, th {
 .img1 {
     
     display: inline;
-    align-self:center;
+    place-self:center;
     
 }
 .img2 {
@@ -60,4 +63,8 @@ a:link, a:visited{
 a:hover, a:active{
     background-color: red;
     color: white;
+}
+iframe{
+    place-self: center;
+    border: none;
 }
