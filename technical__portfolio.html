@@ -5,32 +5,12 @@
         <title>Russell Rivard</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso=8859-1">
 
-        <script> 
-            function toggleTheme() { 
-                
-                var theme = document.getElementsByTagName('link')[0]; 
-      
-                
-                if (theme.getAttribute('href') == 'style1.css') { 
-                    theme.setAttribute('href', 'style2.css'); 
-                } else { 
-                    theme.setAttribute('href', 'style1.css'); 
-                } 
-                sessionStorage.setItem('href',theme.getAttribute('href'));
-            } 
+        <script src="toggle.js"> 
         </script> 
     </head>
 
     <body>
-        <script>
-            window.onload =function(){
-                if(sessionStorage.getItem('href')== null){
-                    sessionStorage.setItem('href','style1.css')
-                }
-                var theme = document.getElementsByTagName('link')[0]; 
-                theme.setAttribute('href', sessionStorage.getItem('href'));
-            }
-        </script>
+        
 
         <h1>Technical Portfolio</h1>
 

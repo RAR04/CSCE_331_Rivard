@@ -6,11 +6,12 @@
     <title>Cybersecurity News</title>
     <style>
         body {
-            margin: 0;
-            font-family: Courier, monospace;
             background-color: maroon;
+            font-family: Courier, monospace;
             color: white;
-            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
             position: relative;
         }
         .background-text {
@@ -20,101 +21,139 @@
             width: 100%;
             height: 100%;
             color: rgba(255, 255, 255, 0.1);
-            font-size: 4em;
+            font-size: 12px;
+            line-height: 1.5;
+            pointer-events: none;
+            user-select: none;
             white-space: pre;
-            overflow: hidden;
-            transform: rotate(90deg);
-            transform-origin: left top;
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            padding: 20px;
+            z-index: 1;
         }
         .news {
-            position: relative;
-            width: 80%;
-            margin: 20px auto;
-            border: 1px solid white;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #333;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+        }
+        .news h1 {
+            text-align: center;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+        }
+        .news article {
+            margin-bottom: 20px;
         }
         .prompt-box {
-            margin: 20px auto;
-            width: 80%;
+            background-color: #444;
+            border: 1px solid #666;
             padding: 20px;
-            border: 1px solid white;
-            background-color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 100px;
             white-space: pre-wrap;
         }
         .scrolling-text {
             position: absolute;
-            top: 120px;
-            width: 100%;
-            height: 100%;
+            bottom: 0;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: 100px;
             overflow: hidden;
-            color: white;
-            font-size: 1.5em;
-            white-space: nowrap;
-            animation: scroll-text 10s linear infinite;
         }
-        .spinning-text {
+        .scrolling-text span {
+            display: block;
             position: absolute;
-            top: 120px;
-            left: 50%;
             width: 100%;
-            text-align: center;
-            color: white;
-            font-size: 2em;
-            transform-origin: center center;
-            animation: spin-text 5s linear infinite;
+            animation: scroll 10s linear infinite;
         }
-        @keyframes scroll-text {
+        @keyframes scroll {
             0% { transform: translateY(100%); }
             100% { transform: translateY(-100%); }
         }
-        @keyframes spin-text {
+        .spinning-text {
+            position: absolute;
+            top: 150px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+        .spinning-text span {
+            display: inline-block;
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        button {
-            display: block;
-            margin: 20px auto;
+        .button-container {
+            text-align: center;
+            margin-top: 200px;
+        }
+        .button-container a {
+            display: inline-block;
             padding: 10px 20px;
-            font-size: 1em;
-            border: none;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
             border-radius: 5px;
-            background-color: white;
-            color: maroon;
-            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container a:hover {
+            background-color: #777;
         }
     </style>
 </head>
 <body>
     <div class="background-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui vitae orci pharetra, ac luctus magna pretium. Sed et leo quis augue volutpat faucibus at ac nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi lacinia, est et fermentum pharetra, arcu sapien ultricies justo, eu viverra purus nulla vel ligula. Mauris viverra, lorem ut tristique fermentum, dolor purus elementum ligula, et tincidunt nulla justo in sem.
-    </div>
-    
-    <div class="news">
-        <h1>Cybersecurity News</h1>
-        <h2>Breaking: New Ransomware Strain Discovered</h2>
-        <p>In a recent development, cybersecurity experts have uncovered a new strain of ransomware that's been wreaking havoc on businesses worldwide. This ransomware, identified as "Eclipse," encrypts critical files and demands a hefty ransom in cryptocurrency for decryption keys. Analysts are warning companies to enhance their security measures and update their antivirus software to combat this growing threat.</p>
-
-        <h2>Security Flaw in Popular Software</h2>
-        <p>A significant security vulnerability has been found in a widely-used software application. The flaw, which allows unauthorized access to sensitive data, has been exploited by hackers in several high-profile attacks. The software developers have released an emergency patch to address the issue, but users are advised to remain vigilant and ensure their systems are up-to-date.</p>
-
-        <h2>New Cybersecurity Legislation Passed</h2>
-        <p>In response to the increasing number of cyber attacks, the government has passed new legislation aimed at strengthening cybersecurity measures. The legislation includes provisions for enhanced data protection, stricter penalties for cybercriminals, and increased funding for cybersecurity research and development. This new law is expected to have a significant impact on how organizations handle and protect their digital assets.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla id scelerisque convallis, ex turpis dapibus ligula, id cursus magna erat non nisi. Fusce vel risus quis odio scelerisque viverra. Vivamus sollicitudin nisl quis lectus tincidunt suscipit. Nullam in odio eu urna tristique ultricies.</p>
+        <p>Quisque euismod odio sed arcu consequat, a sodales metus consectetur. Ut vel vehicula ipsum. Donec volutpat orci nec tortor suscipit lacinia. Suspendisse potenti. Praesent id eros at libero fermentum auctor.</p>
+        <p>Aliquam erat volutpat. Vestibulum vel felis ut nisl viverra gravida. Mauris vitae ligula sapien. Phasellus condimentum arcu a purus faucibus, vel dapibus elit malesuada. Ut et eros ut orci scelerisque lacinia.</p>
     </div>
 
-    <div class="prompt-box">
-        Generate an HTML webpage with a maroon background, indecipherable text in the background, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family. Make sure the prompt box is filled with the entire prompt. Below the prompt box, have text that falls straight down the screen, looping back to the top when it reaches the bottom of the screen. This text needs to fall down, not go up. Also have text that spins in place, letter by letter. The elements below the prompt box should be at least 100 pixels below it. Add a button that links to "https://chatgpt.com" and reads ChatGPT.
-    </div>
+    <div class="container">
+        <div class="news">
+            <h1>Cybersecurity News</h1>
+            <article>
+                <h2>New Ransomware Targets Critical Infrastructure</h2>
+                <p>The latest ransomware attack has been reported to target critical infrastructure systems. Experts are urging organizations to bolster their defenses against these sophisticated threats. The ransomware encrypts files and demands a hefty ransom for decryption keys. Authorities are investigating the origin of the attack and potential vulnerabilities exploited.</p>
+            </article>
+            <article>
+                <h2>Phishing Scams on the Rise: How to Protect Yourself</h2>
+                <p>Phishing scams are becoming increasingly sophisticated, with attackers using convincing emails and fake websites to steal personal information. Security experts advise being cautious with unsolicited emails and verifying the authenticity of requests for sensitive information. Regularly updating passwords and using multi-factor authentication can also help mitigate the risk.</p>
+            </article>
+            <article>
+                <h2>New Security Patch Released for Major Software</h2>
+                <p>A new security patch has been released to address vulnerabilities in major software used by businesses and individuals. The patch fixes several critical issues that could be exploited by attackers to gain unauthorized access to systems. Users are advised to apply the patch as soon as possible to ensure their systems are protected.</p>
+            </article>
+        </div>
 
-    <div class="scrolling-text">
-        This is scrolling text that falls down the screen and loops back to the top. This is scrolling text that falls down the screen and loops back to the top. This is scrolling text that falls down the screen and loops back to the top.
-    </div>
+        <div class="prompt-box">
+            <p>Generate an HTML webpage with a maroon background, indecipherable text in the background, cybersecurity news formatted like a newspaper, a box with this prompt in it, and a local link to "index.html", labeled "Home Page". Make sure the news is filled with more than placeholder text. Make the font from the Courier family. Make sure the prompt box is filled with the entire prompt. Below the prompt box, have text that falls straight down the screen, looping back to the top when it reaches the bottom of the screen. This text needs to fall down, not go up. Also have text that spins in place, letter by letter. The elements below the prompt box should be at least 100 pixels below it. Add a button that links to "https://chatgpt.com" and reads ChatGPT. Ensure that every single element does not overlap with any other element by having at least 100 pixels between them.</p>
+        </div>
 
-    <div class="spinning-text">
-        <span>S</span><span>p</span><span>i</span><span>n</span><span>n</span><span>i</span><span>n</span><span>g</span> <span>T</span><span>e</span><span>x</span><span>t</span>
-    </div>
+        <div class="scrolling-text">
+            <span>This is the scrolling text that moves from bottom to top continuously.</span>
+        </div>
 
-    <a href="index.html" style="display: block; text-align: center; color: white; margin: 20px auto;">Home Page</a>
-    <button onclick="window.location.href='https://chatgpt.com';">ChatGPT</button>
+        <div class="spinning-text">
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+            <span>D</span>
+            <span>E</span>
+        </div>
+
+        <div class="button-container">
+            <a href="https://chatgpt.com" target="_blank">ChatGPT</a>
+        </div>
+
+        <div class="button-container" style="position: absolute; top: 0; left: 20px;">
+            <a href="index.html">Home Page</a>
+        </div>
+    </div>
 </body>
 </html>
