@@ -4,17 +4,48 @@
         <link rel="stylesheet" href="style1.css">
         <title>Russell Rivard</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso=8859-1">
+
+        <script> 
+            function toggleTheme() { 
+                
+                var theme = document.getElementsByTagName('link')[0]; 
+      
+                
+                if (theme.getAttribute('href') == 'style1.css') { 
+                    theme.setAttribute('href', 'style2.css'); 
+                } else { 
+                    theme.setAttribute('href', 'style1.css'); 
+                } 
+                sessionStorage.setItem('href',theme.getAttribute('href'));
+            } 
+        </script> 
+        
     </head>
 
     <body>
-
+        <script>
+            window.onload =function(){
+                if(sessionStorage.getItem('href')== null){
+                    sessionStorage.setItem('href','style1.css')
+                }
+                var theme = document.getElementsByTagName('link')[0]; 
+                theme.setAttribute('href', sessionStorage.getItem('href'));
+            }
+        </script>
         <h1>Qualifications</h1>
 
         <header>
+
             <a href="index.html">Home</a>
+
+            <audio loop controls autoplay>
+                <source src="https://musa.tamu.edu/wp-content/uploads/2023/01/5.-Guadalcanal-March-from-Victory-at-Sea.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio> 
+
         </header>
 
-        <iframe src="ResumeRussellRivard.pdf" title="Download Resume"></iframe>
+        <iframe src="ResumeRussellRivard.pdf" title="Download Resume" style="left:25%; width:50%;height:30%;"></iframe>
 
         <div class="main">
             
@@ -25,7 +56,7 @@
             <div class="text1">
                 <p>
                     I am proficient at programming in C++ and Python.<br>
-                    I possess in-depth knowledge of Java and its Collections framework.<br>
+                    I possess in-depth knowledge of Java and its <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html" style="all:initial;color:aqua"><u>Collections framework.</u></a><br>
                     I am competent with basic cybersecurity skills, to include knowledge of Linux and bash scripting.<br>
                 </p>
             </div>
@@ -34,10 +65,12 @@
                 <p>
                     My primary area of interest in computer science is cybersecurity, as it is far removed from graphics 
                     and visual design which I generally tend to shy away from. I am in multiple organizations that push their members
-                    to pursue cybersecurity training beyond Texas A&M's limited scope of cybersecurity courses.
+                    to pursue cybersecurity training beyond Texas A&M's limited scope of cybersecurity courses. Last May I attended SMC Cyber Converge,
+                    a conference on cybersecurity among the Senior Military Colleges, in pursuit of this interest.
                 </p>
             </div>
                 
         </div>
+        <button onclick="toggleTheme()">Switch CSS Stylesheet</button>
     </body>
 </html>

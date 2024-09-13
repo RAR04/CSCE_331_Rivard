@@ -4,14 +4,45 @@
         <link rel="stylesheet" href="style1.css">
         <title>Russell Rivard</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso=8859-1">
+
+        <script> 
+            function toggleTheme() { 
+                
+                var theme = document.getElementsByTagName('link')[0]; 
+      
+                
+                if (theme.getAttribute('href') == 'style1.css') { 
+                    theme.setAttribute('href', 'style2.css'); 
+                } else { 
+                    theme.setAttribute('href', 'style1.css'); 
+                } 
+                sessionStorage.setItem('href',theme.getAttribute('href'));
+            } 
+        </script> 
     </head>
 
     <body>
+        <script>
+            window.onload =function(){
+                if(sessionStorage.getItem('href')== null){
+                    sessionStorage.setItem('href','style1.css')
+                }
+                var theme = document.getElementsByTagName('link')[0]; 
+                theme.setAttribute('href', sessionStorage.getItem('href'));
+            }
+        </script>
 
         <h1>Technical Portfolio</h1>
 
         <header>
+
             <a href="index.html">Home</a>
+
+            <audio loop controls autoplay>
+                <source src="https://musa.tamu.edu/wp-content/uploads/2023/01/4.-Ghost-Riders-in-the-Sky.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio> 
+
         </header>
 
         <br>
@@ -34,7 +65,9 @@
                 <div class="text1">
                     <h2>A+ Computer Science</h2>
                     <p>I worked internships at A+ Computer Science developing tests on the Java programming language designed to prepare students
-                        for the Texas UIL State programming competition.
+                        for the Texas UIL State programming competition. The tests range in difficultly, from basics of programming and Java syntax
+                        to data structures and algorithms, graph theory, and niche Java semantics. I worked with other interns to edit and review the tests
+                        that we all created. The first internship, I also helped test a new software solution that allows users to program directly in the company's website.
                     </p>
                 </div>
                 
@@ -42,10 +75,12 @@
                     <h2>Bio ISAC</h2>
                     <p>While I didn't work directly for Bio ISAC, I co-developed an introductory biology, genetics, genomics, and cybersecurity
                         ciriculum to help Bio ISAC's mission of securing the bioeconomy. I worked through creating and managing virtual machines
-                        that enable students of the course to gain an apprieciable understanding of several facets of cybersecurity.
+                        that enable students of the course to gain an apprieciable understanding of several facets of cybersecurity, and computer software
+                        that is likely to be encountered within the bioeconomy. I also helped the other interns develop the presentations for all of the curriculum.
                     </p>
                 </div>
             
         </div>
+        <button onclick="toggleTheme()">Switch CSS Stylesheet</button>
     </body>
 </html>

@@ -4,27 +4,75 @@
         <link rel="stylesheet" href="style1.css">
         <title>Russell Rivard</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso=8859-1">
+
+        <script> 
+            function toggleTheme() { 
+                
+                var theme = document.getElementsByTagName('link')[0]; 
+      
+                
+                if (theme.getAttribute('href') == 'style1.css') { 
+                    theme.setAttribute('href', 'style2.css'); 
+                } else { 
+                    theme.setAttribute('href', 'style1.css'); 
+                } 
+                sessionStorage.setItem('href',theme.getAttribute('href'));
+            } 
+        </script> 
     </head>
 
     <body>
-
+        <script>
+            window.onload =function(){
+                if(sessionStorage.getItem('href')== null){
+                    sessionStorage.setItem('href','style1.css')
+                }
+                var theme = document.getElementsByTagName('link')[0]; 
+                theme.setAttribute('href', sessionStorage.getItem('href'));
+            }
+        </script>
         <h1>Service</h1>
 
         <header>
+
             <a href="index.html">Home</a>
+
+            <audio loop controls autoplay>
+                <source src="https://musa.tamu.edu/wp-content/uploads/2023/01/11.-Them-Basses-March.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio> 
+
         </header>
 
         <div class="main">
-
-            <a href="https://www.instagram.com/o.r.simpson/" style="align-content: center;">
-                <img src="https://instagram.fftw1-1.fna.fbcdn.net/v/t51.2885-19/301094743_605471141016793_2377839478786663966_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fftw1-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=Y3yjMQd6fp0Q7kNvgHXk1I8&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYCGZSyuTH8aL4yRoPGBK5le0dRKY9qh7mwc2jOn4viBdQ&oe=66DC2A6F&_nc_sid=8f1549">
+            <div class="box1">
+            <a href="https://www.instagram.com/o.r.simpson/">
+                <img src="https://scontent.fftw1-1.fna.fbcdn.net/v/t1.6435-9/70453665_100683647995007_1622125146728824832_n.jpg?stp=dst-jpg_s960x960&_nc_cat=102&ccb=1-7&_nc_sid=2285d6&_nc_ohc=eLAZq9o5G5UQ7kNvgEDJl53&_nc_ht=scontent.fftw1-1.fna&_nc_gid=AbZ70v1D0xUqwZrWFgVmi_R&oh=00_AYCDbn3mMJ73DqC__CHal6KKMSW3H_eyo2cJ9ZSzYx3ecA&oe=6709E096">
             </a>
-            
+            </div>
+            <div class="text1">
             <p>
                 O.R. Simpson Honor Society is one of the premier service organizations in the Corps of Cadets.
-                Members give up their time to tutor other cadets to try and raise grades across the Corps, with at least 8 tutored hours every semester.
-                Those in the unit can be recodnized by the distinctive blue and white cord on their shoulder.
+                Members give up their time to tutor other cadets to try and raise grades across the Corps, with members required to tutor over 8 hours every semester.
+                The collective experience of all the members, along with years of graded tests from nearly every course in the university,
+                allow cadets to be supported in every academic endeavour.
+                Those in the unit can be recodnized by the distinctive blue and white cord worn on their left shoulder.
             </p>
+            </div>
+            <div class="box2">
+                <a href="https://bigevent.tamu.edu/">
+                    <img src="https://bigevent.tamu.edu/wp-content/uploads/2020/07/TBE-LOGO-png-300x206.png">
+                </a>
+            </div>
+            <div class="text2">
+                <p>
+                    The Big Event is a yearly service project in the Bryan-College Station area, where members
+                    of Texas A&M University help members of the community in need. The organization manages requests
+                    and matching the right people to the right job. Thousands of Aggies put out to give back to the community
+                    that supports the college by giving up 2-4 hours on a Saturday to engage in manual labor.
+                </p>
+            </div>
         </div>
+        <button onclick="toggleTheme()">Switch CSS Stylesheet</button>
     </body>
 </html>
